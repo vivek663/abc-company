@@ -1,0 +1,6 @@
+com\abcapp\backend\controller\HeadingController.class
+com\abcapp\backend\BackendApplication$1.class
+com\abcapp\backend\BackendApplication.class
+com\abcapp\backend\model\Heading.class
+com\abcapp\backend\repository\HeadingRepository.class
+com\abcapp\backend\service\HeadingService.class
