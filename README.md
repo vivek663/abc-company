@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# ABC Company Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive website for Company ABC with dynamic content management capabilities.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+abcapp/
+├── frontend/           # React frontend application
+├── backend/           # Spring Boot backend application
+└── README.md         # Project documentation
+```
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (v14 or higher)
+- Java JDK 17 or higher
+- Maven
+- MySQL/PostgreSQL
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Frontend Setup
 
-### `npm test`
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The frontend will be available at `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Backend Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
 
-### `npm run eject`
+2. Build the project:
+   ```bash
+   mvn clean install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Run the application:
+   ```bash
+   mvn spring-boot:run
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The backend API will be available at `http://localhost:8080`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### GET /api/heading
+- Returns the current heading text
+- Response: `{ "text": "string" }`
 
-## Learn More
+### POST /api/heading
+- Updates the heading text
+- Request Body: `{ "text": "string" }`
+- Response: `{ "success": boolean, "message": "string" }`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Database Configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application uses a relational database (MySQL/PostgreSQL). Configure the database connection in `backend/src/main/resources/application.properties`:
 
-### Code Splitting
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/abc_company
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Features
 
-### Analyzing the Bundle Size
+- Responsive design based on Figma specifications
+- Dynamic heading management through CMS
+- RESTful API endpoints
+- Database integration
+- Cross-browser compatibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Development
 
-### Making a Progressive Web App
+- Frontend: React with modern CSS (styled-components)
+- Backend: Spring Boot
+- Database: MySQL/PostgreSQL
+- API Documentation: Swagger/OpenAPI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Deployment
 
-### Advanced Configuration
+Instructions for deploying the application will be added soon.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is proprietary and confidential.
